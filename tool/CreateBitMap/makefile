@@ -1,2 +1,2 @@
-Create.exe:Create.c
-	gcc -o Create.exe Create.c
+Create:Create.c
+	gcc -o Create Create.c
