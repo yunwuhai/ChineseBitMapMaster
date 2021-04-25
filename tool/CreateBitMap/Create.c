@@ -3,8 +3,7 @@
   
 int main(void)  
 {  
-    FILE *fp = NULL;  
-    char ch = 0;
+    FILE *fp = NULL;
 
     fp=fopen("gb2312.txt","wb");
     if(fp==NULL)  
