@@ -1,3 +1,13 @@
+'''
+ Description  : 将字模文本文件转换为二进制字模字库文件，但是如果文本文件格式与本文件夹下的gb2312_bitmap.txt不同的话，则需要修改格式或修改本代码
+ Version      : beta-1.0.0
+ Author       : YunWuHai
+ Date         : 2021-04-25 19:01:22
+ LastEditors  : YunWuHai
+ LastEditTime : 2021-04-26 15:19:55
+ FilePath     : \ChineseBitMapMaker\tool\MachingFile\Maching.py
+ Copyright (C) 2021 YunWuHai. All rights reserved.
+'''
 import struct
 import sys
 

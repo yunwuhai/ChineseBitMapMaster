@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "findcode.h": "c",
+        "stdbool.h": "c",
+        "iostream": "cpp",
+        "selflib.h": "c",
+        "stdint.h": "c",
+        "vcruntime.h": "c"
+    }
+}
