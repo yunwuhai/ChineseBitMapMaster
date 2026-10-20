@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: MIT
+
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: pip install pillow pytest
+      - name: Run tests
+        run: python -m pytest -q
+
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run C tests
+        run: make test-c CFLAGS="-std=c99 -Wall -Wextra -Werror -fsanitize=address,undefined"
+      - name: Check size-reduction build options
+        run: cc -std=c99 -Os -DCBM_MAX_RANGES=16 -DCBM_NO_VERIFY -DCBM_NO_STRERROR -c src/cbm.c -o /tmp/cbm_slim.o

@@ -1,0 +1,10 @@
+# Normalize text files to LF in the repository (Windows checkouts stay usable).
+* text=auto eol=lf
+
+# Generated font blobs and binary assets must never be line-ending converted.
+*.cbm binary
+*.ttf binary
+*.ttc binary
+*.otf binary
+*.png binary
+*.zip binary
